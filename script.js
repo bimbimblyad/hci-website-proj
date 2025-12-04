@@ -94,3 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 });
+
+// Top-button: scroll to top and show/hide on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const topBtn = document.querySelector('.top-button');
+  if (!topBtn) return;
+
+  const onClick = (ev) => {
+    ev.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  topBtn.addEventListener('click', onClick);
+
+  const toggle = () => {
+    if (window.scrollY > 300) topBtn.classList.remove('hide'); else topBtn.classList.add('hide');
+  };
+
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
+});

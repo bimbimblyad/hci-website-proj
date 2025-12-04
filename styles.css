@@ -3,6 +3,7 @@
   --link-color: #4a76ee;
   --background-color: #eeeff1;
   --background-gradient: linear-gradient(180deg, #f7fbff 0%, #eef4ff 40%, #f3f7fb 100%);
+  --nav-height: 60px;
 }
 
 * {
@@ -10,12 +11,16 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 20px;
-  
+  width: auto;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 html {
   scroll-behavior: smooth;
-  
+  scroll-padding-top: var(--nav-height);
+
 }
 
 body {
@@ -25,6 +30,10 @@ body {
   background-color: var(--background-color);
   max-width: 1400px;
   margin: 0 auto;
+  overflow-x: hidden;
+}
+section[id], [id] {
+  scroll-margin-top: calc(var(--nav-height) + 8px);
 }
 
 a {
@@ -37,14 +46,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  width: 100vw ;
+  margin-left: calc(-50vw + 50%);
+  position: sticky;
+  top: 0;
+  background-color: white;
   padding: 0 50px;
   height: 80px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav .left a {
   color: var(--text-color);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -389,7 +404,7 @@ nav .right a span {
 
   /* SECTION 4: Contact */
   .contact-section {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 }
 /* success message shown directly below the send button */
@@ -426,5 +441,29 @@ nav .right a span {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+.top-button {
+  animation-name: scrollbutton;
+  animation-timeline: scroll(y);
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  
+}
 
-/* Fade-in on scroll: .fade-hidden and .fade-in classes are set by script.js */
+@keyframes scrollbutton {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 25%;
+  }
+  15% {
+  opacity: 50%;
+  }
+  20% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
