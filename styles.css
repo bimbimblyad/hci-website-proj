@@ -362,21 +362,63 @@ nav .right a span {
 @media (max-width: 600px) {
   /* NAVBAR */
   nav {
-    padding: 0 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  nav .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav .left a {
+    font-size: 16px;
+  }
+
+  nav .left h5 {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  nav .right {
+    display: flex;
+    gap: 10px;
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   nav .right a {
-    font-size: 22px;
+    font-size: 16px;
+    margin: 0 4px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   nav .right a:last-child {
     color: var(--text-color);
     background-color: transparent;
-    padding: 0;
+    padding: 6px 10px;
   }
 
   nav .right a span {
     display: none;
+  }
+
+  nav .right a i {
+    font-size: 18px;
   }
 
   /* SECTION 1: Hero */
