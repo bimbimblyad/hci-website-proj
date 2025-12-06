@@ -38,8 +38,6 @@ html.dark-mode textarea {
   padding: 0;
   box-sizing: border-box;
   font-size: 20px;
-  width: auto;
-  box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -146,7 +144,7 @@ nav .right a span {
   font-size: 20px;
 }
 
-/* SECTION 1: Hero */
+/* SECTION 1 */
 .hero-section {
   display: flex;
   justify-content: space-between;
@@ -298,8 +296,6 @@ nav .right a span {
   text-align: center;
   margin-bottom: 20px;
 }
-
-/* Reusable cells styling (for skills, goals, hobbies, tech-stack) */
 .skills-section .cells,
 .goals-section .cells,
 .hobbies-section .cells,
@@ -339,16 +335,6 @@ nav .right a span {
 .hobbies-section .cells .cell span,
 .tech-stack-section .cells .cell span {
   font-size: 18px;
-}
-/* SECTION 3: Testimony (not currently used in HTML; kept for future reference) */
-.testimony-section {
-  padding: 0 50px;
-  margin-bottom: 100px;
-}
-
-.testimony-section h2 {
-  font-size: 35px;
-  margin-bottom: 30px;
 }
 
 /* SECTION 4: Contact */
@@ -416,19 +402,6 @@ nav .right a span {
     flex-direction: column-reverse;
   }
 
-  .hero-section .headshot img {
-    width: 300px;
-  }
-
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    text-align: center;
-  }
-
-  .testimony-section .contact {
-    flex-direction: column;
-  }
-
   /* SECTION 4: Contact */
   .contact-section .contact {
     flex-direction: column;
@@ -444,7 +417,6 @@ nav .right a span {
     padding: 12px 16px;
     gap: 10px;
     justify-content: center;
-    transition: transform .2s ease, color .2s ease;
   }
 
   nav .left {
@@ -524,11 +496,6 @@ nav .right a span {
 
   .skills-section .cells .cell span {
     font-size: 16px;
-  }
-
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    padding: 0 20px;
   }
 
   /* SECTION 4: Contact */
