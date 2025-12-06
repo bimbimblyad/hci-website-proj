@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- Dark mode toggle ---
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const htmlElement = document.documentElement;
+  const darkModeKey = 'dark-mode-enabled';
+
+  // Load dark mode preference from localStorage
+  const isDarkMode = localStorage.getItem(darkModeKey) === 'true';
+  if (isDarkMode) {
+    htmlElement.classList.add('dark-mode');
+  }
+
+  // Toggle dark mode on button click
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark-mode');
+      const isNowDark = htmlElement.classList.contains('dark-mode');
+      localStorage.setItem(darkModeKey, isNowDark);
+    });
+  }
+
   // --- Fade-in on scroll (IntersectionObserver with scroll fallback) ---
   const fadeTargets = Array.from(document.querySelectorAll('.fade-on-scroll'));
   const reveal = (el) => {
@@ -93,6 +113,21 @@ document.addEventListener('DOMContentLoaded', () => {
     showMessage('Message sent!', false);
     form.reset();
   });
+
+  // --- Photo hover swap ---
+  const heroPhoto = document.querySelector('.hero-photo');
+  if (heroPhoto) {
+    const originalSrc = heroPhoto.src;
+    const hoverSrc = heroPhoto.getAttribute('data-hover');
+
+    heroPhoto.addEventListener('mouseenter', () => {
+      if (hoverSrc) heroPhoto.src = hoverSrc;
+    });
+
+    heroPhoto.addEventListener('mouseleave', () => {
+      heroPhoto.src = originalSrc;
+    });
+  }
 });
 
 // Top-button: scroll to top and show/hide on scroll

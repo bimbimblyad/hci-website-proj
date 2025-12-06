@@ -6,6 +6,33 @@
   --nav-height: 60px;
 }
 
+html.dark-mode {
+  --text-color: #e0e0e0;
+  --link-color: #7a9fff;
+  --background-color: #1e1e1e;
+  --background-gradient: linear-gradient(180deg, #1a1a1a 0%, #242424 40%, #1f1f1f 100%);
+}
+
+html.dark-mode body {
+  background: var(--background-gradient);
+}
+
+html.dark-mode nav {
+  background-color: #2a2a2a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .sent-message {
+  background-color: #333;
+}
+
+html.dark-mode input,
+html.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #7a9fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -63,9 +90,18 @@ nav .left a {
   font-weight: 600;
 }
 
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 nav .right a {
   color: var(--text-color);
   margin: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 nav .right a:last-child {
@@ -77,6 +113,31 @@ nav .right a:last-child {
 
 nav .right a span {
   margin-left: 5px;
+}
+
+/* Dark mode toggle button */
+.dark-mode-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: transform .2s ease, color .2s ease;
+  margin: 0 6px;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.15);
+  color: var(--link-color);
+}
+
+.dark-mode-btn i {
+  font-size: 20px;
 }
 
 /* SECTION 1: Hero */
@@ -125,7 +186,16 @@ nav .right a span {
 
 .hero-section .photo img {
   width: 350px;
+  height: 350px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: filter .3s ease;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-section .photo img:hover {
+  filter: brightness(1.1);
 }
 
 /* SECTION 2: Skills */
@@ -421,6 +491,16 @@ nav .right a span {
     font-size: 18px;
   }
 
+  .dark-mode-btn {
+    font-size: 16px;
+    padding: 4px 8px;
+    margin: 0 4px;
+  }
+
+  .dark-mode-btn i {
+    font-size: 16px;
+  }
+
   /* SECTION 1: Hero */
   .hero-section {
     padding: 0 20px;
@@ -509,3 +589,7 @@ nav .right a span {
     opacity: 100%;
   }
 }
+footer p {
+  text-align: center;
+  font-size: 16px;
+  }
